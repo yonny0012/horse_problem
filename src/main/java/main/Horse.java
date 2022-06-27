@@ -1,4 +1,4 @@
-package iphord.horse;
+package main;
 import GUI.Frame;
 import GUI.Ventana;
 
