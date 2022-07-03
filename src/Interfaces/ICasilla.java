@@ -1,7 +1,7 @@
 package Interfaces;
 
 public abstract interface ICasilla {
-    abstract boolean hasFicha(); 
+    abstract boolean hasCaballo(); 
     abstract int getColumna();
     abstract int getFila();
     abstract char getLetterFila();

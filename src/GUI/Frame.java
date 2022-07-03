@@ -30,11 +30,13 @@ public class Frame extends JFrame{
         al = (int)height;
         an = (int)width;
         
-        setSize(an/2, al/2);
-        
+        //setSize(an/2, al/2);
+        setSize(500, 500);
+        FlowLayout fl = new FlowLayout();
         BorderLayout bl = new BorderLayout();
         GridLayout gl = new GridLayout(1,2);
-        setLayout(gl);
+        setLayout(bl);
+        setResizable(false);
 
         System.out.println(this.getSize());
 
@@ -51,8 +53,9 @@ public class Frame extends JFrame{
     private void makePanel(){
         pan_Principal = new JPanel();
         pan_Principal.setSize(this.getSize().height,this.getSize().height);
-        GridLayout glyd = new GridLayout(10,10);
         
+        GridLayout glyd = new GridLayout(10,10);
+       
         pan_Principal.setLayout(glyd);
         pan_Principal.setBorder(new LineBorder(Color.CYAN,1));
         

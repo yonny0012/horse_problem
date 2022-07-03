@@ -13,8 +13,7 @@ public class Casilla extends JPanel implements ICasilla{
     private Color col; 
     private Etiqueta etq_cas;
     private int dim_cas, id_cas;
-
-    
+    private Caballo cab;
     
     /**
      * este objeto recive como id un numero de dos cifras en formato fila-columna
@@ -29,6 +28,8 @@ public class Casilla extends JPanel implements ICasilla{
         setBorder(new LineBorder(Color.black,1));
 
         //System.out.println("posicion: "+getFila()+getColumna()+"  "+getId());
+
+        //this.setLayout(null);
     }
 
     /**este segundo constructor pertenece a las filas de letras 
@@ -90,7 +91,10 @@ public class Casilla extends JPanel implements ICasilla{
         return id_cas%10;
     }
 
-   
+    public void setCaballo(Caballo cab){
+        this.cab = cab;
+    }
+
     @Override
     public boolean hasFicha() {
         // TODO Auto-generated method stub
