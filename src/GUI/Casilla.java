@@ -16,6 +16,10 @@ public class Casilla extends JPanel implements ICasilla{
 
     
     
+    /**
+     * este objeto recive como id un numero de dos cifras en formato fila-columna
+     * este primer constructor pertenece a las casillas del internas del juego (blancas y negras)
+     */
     public Casilla(Color col,int id, int dim){
         //super.setLayout(new BorderLayout()); 
         //setSize(dim/10,dim/10);
@@ -26,6 +30,10 @@ public class Casilla extends JPanel implements ICasilla{
 
         //System.out.println("posicion: "+getFila()+getColumna()+"  "+getId());
     }
+
+    /**este segundo constructor pertenece a las filas de letras 
+     * que identofican a las filas del tablero
+    */
     public Casilla(char let, Color col, int dim){
         //setBorder(new LineBorder(Color.BLACK,1));
         setSize(dim/10,dim/10);
@@ -33,6 +41,10 @@ public class Casilla extends JPanel implements ICasilla{
         etq_cas = new Etiqueta(String.valueOf(let));
         this.add(etq_cas);
     }
+
+    /**este tercer constructor pertenece a las Columnas de numeros 
+     * que identofican a las Columnas del tablero
+    */
     public Casilla(int pos, Color col, int dim){
         //setBorder(new LineBorder(Color.green,1));
         setSize(dim/10,dim/10);
@@ -56,7 +68,7 @@ public class Casilla extends JPanel implements ICasilla{
     public int getId(){
         return this.id_cas;
     }
-    public char getFila(){
+    public char getLetterFila(){            //devuelve la letra de la fila 
         int fil = id_cas/10;
         char letra = '0';
         switch(fil){
@@ -71,7 +83,10 @@ public class Casilla extends JPanel implements ICasilla{
         }
         return letra;
     }
-    public int getColumna(){
+    public int getFila(){                   //devuelve el numero de la fila
+        return (int)id_cas/10;
+    }
+    public int getColumna(){                //devuelve el numero de la columna
         return id_cas%10;
     }
 
