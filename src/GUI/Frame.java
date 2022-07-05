@@ -14,8 +14,10 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.LineBorder;
 import javax.swing.text.LayoutQueue;
 
+import GUI.Elementos.Tablero;
+
 public class Frame extends JFrame{
-    private JPanel pan_Principal;
+    private Tablero pan_Principal;
     private double width,height;
     private Dimension dim;
     private int an, al;
@@ -49,9 +51,11 @@ public class Frame extends JFrame{
         setTitle("The_Horse_problem");   
         
         makePanel();
+
+        //pan_Principal.Mostrar();
     }
     private void makePanel(){
-        pan_Principal = new JPanel();
+        pan_Principal = new Tablero();
         pan_Principal.setSize(this.getSize().height,this.getSize().height);
         
         GridLayout glyd = new GridLayout(10,10);
@@ -72,21 +76,22 @@ public class Frame extends JFrame{
             for(int j=0;j<=9;j++){
                 if ((0<i && i<9) && (0<j && j<9) ){
                     if(i%2!=0 && j%2==0){           //establece la casilla negra si la fila es impar y la columna par
-                        pan_Principal.add(new Casilla(Color.BLACK, (i*10+j),pan_Principal.getHeight()));
+                        pan_Principal.AddCasilla(new Casilla(new Color(23, 48, 159), (i*10+j),pan_Principal.getHeight()));
                     }
                     else if(i%2!=0 && j%2!=0){      //establece la casilla blanca si la fila es impar y la columna impar
-                        pan_Principal.add(new Casilla(Color.white, (i*10+j),pan_Principal.getHeight()));
+                        pan_Principal.AddCasilla(new Casilla(new Color(104, 243, 239), (i*10+j),pan_Principal.getHeight()));
                     }
                     else if (i%2==0 && j%2!=0){     //establece la casilla negra si la fila es par y la columna impar
-                        pan_Principal.add(new Casilla(Color.black, (i*10+j),pan_Principal.getHeight()));
+                        pan_Principal.AddCasilla(new Casilla(new Color(23, 48, 159), (i*10+j),pan_Principal.getHeight()));
                     }
                     else if (i%2==0 && j%2==0){     //establece la casilla blanca si la fila es par y la columna par
-                        pan_Principal.add(new Casilla(Color.white, (i*10+j),pan_Principal.getHeight()));
+                        pan_Principal.AddCasilla(new Casilla(new Color(104, 243, 239), (i*10+j),pan_Principal.getHeight()));
                     }
                 }
-                else if(i==0 || i==9){
+                else if(i==0 || i==9){//Columnas (Fila de numeros arriba y abajo)
                     if(j>0 && j<9){
-                        pan_Principal.add(new Casilla(letra[j-1],Color.white,pan_Principal.getHeight()));
+                        
+                        pan_Principal.add(new Casilla(j,Color.white,pan_Principal.getHeight()));
                     }
                     else{
                         JPanel p = new JPanel();
@@ -95,14 +100,17 @@ public class Frame extends JFrame{
                         pan_Principal.add(p);
                     }
                 }
-                else if((j==0 || j==9)){
+                else if((j==0 || j==9)){//Filas (Columnas de letras a los laterales)
                     if(i>0 && i<9){
-                        pan_Principal.add(new Casilla(i,Color.white,pan_Principal.getHeight()));
+                        pan_Principal.add(new Casilla(letra[i-1],Color.white,pan_Principal.getHeight()));
                     }                        
                 }
                     
             }   
         }
+    }
+    public Tablero getPan_Principal(){
+        return this.pan_Principal;
     }
     
 }

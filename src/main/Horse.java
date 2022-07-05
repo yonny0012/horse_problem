@@ -1,4 +1,10 @@
 package main;
+import java.awt.Color;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import GUI.Caballo;
 import GUI.Frame;
 //import GUI.Ventana;
 
@@ -11,6 +17,18 @@ public class Horse {
         Frame f1 = new Frame();
         
         f1.setVisible(true);
+        
 
+        /*(f1.getPan_Principal().getCasillas())[0][0].setCaballo(new Caballo());
+        (f1.getPan_Principal().getCasillas())[2-1][2-1].setCaballo(new Caballo());
+        (f1.getPan_Principal().getCasillas())[5][1].setCaballo(new Caballo());
+        (f1.getPan_Principal().getCasillas())[2][3].setCaballo(new Caballo());
+        (f1.getPan_Principal().getCasillas())[1][4].setCaballo(new Caballo());*/
+        //JLabel lb = new JLabel();
+        //lb.setIcon(new javax.swing.ImageIcon("Images/pngwing.com.png"));
+        //((f1.getPan_Principal().getCasillas())[2][4]).setBackground(Color.black);
+        //((f1.getPan_Principal().getCasillas())[2][4]).setColor(Color.black);
+
+        
     }
 }
