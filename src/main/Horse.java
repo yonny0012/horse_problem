@@ -9,6 +9,7 @@ import GUI.Frame;
 //import GUI.Ventana;
 import GUI.caballoBlanco;
 import GUI.caballoNegro;
+import GUI.Elementos.Tablero;
 
 public class Horse {
 
@@ -31,6 +32,7 @@ public class Horse {
         //((f1.getPan_Principal().getCasillas())[2][4]).setBackground(Color.black);
         //((f1.getPan_Principal().getCasillas())[2][4]).setColor(Color.black);
 
+        Tablero.getCasillas()[6-1][6-1].setCaballo(new caballoBlanco(66));
         
     }
 }

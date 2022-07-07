@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import GUI.Casilla;
 
 public class Tablero extends JPanel{
-    private Casilla[][] casillas;
+    static Casilla[][] casillas;
     private boolean canSetHorse = false;    
     private int con_Clicks = 0;
     
@@ -16,7 +16,7 @@ public class Tablero extends JPanel{
         casillas = new Casilla[8][8];
     }
     
-    public Casilla[][] getCasillas() {
+    public static Casilla[][] getCasillas() {
         return casillas;
     }
     private void setCasillas(Casilla cas, int id) {

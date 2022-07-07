@@ -1,11 +1,12 @@
 package GUI.Tree_Structure.TDAs;
+import GUI.Elementos.Coordenada;
 import Interfaces.ILista;
 
-public class listaSE<T> implements ILista<T>{
+public class listaSE<Coordenada> implements ILista<Coordenada>{
 
     private int longitud;
-    protected NodoSE<T> primero;
-    protected NodoSE<T> ultimo;
+    protected NodoSE<Coordenada> primero;
+    protected NodoSE<Coordenada> ultimo;
 
     public listaSE() {
         primero = null;
@@ -13,8 +14,8 @@ public class listaSE<T> implements ILista<T>{
         longitud = 0;
     }
 
-    public void Adicionar(T x) {
-        NodoSE<T> nuevo = new NodoSE<T>(x, null);
+    public void Adicionar(Coordenada x) {
+        NodoSE<Coordenada> nuevo = new NodoSE<Coordenada>(x, null);
         if (Vacia()) {
             primero = ultimo = nuevo;
         } else {
@@ -24,16 +25,16 @@ public class listaSE<T> implements ILista<T>{
         longitud++;
     }
 
-    public void Insertar(T x, int pos) throws ExceptionPosFueraDeRango {
+    public void Insertar(Coordenada x, int pos) throws ExceptionPosFueraDeRango {
         if ((pos < 0) || (pos >= longitud)) 
             throw new ExceptionPosFueraDeRango();
 
-        NodoSE<T> nuevo = new NodoSE<T>(x, null);
+        NodoSE<Coordenada> nuevo = new NodoSE<Coordenada>(x, null);
         if (pos == 0) {
             nuevo.setSiguiente(primero);
             primero = nuevo;
         } else {
-            NodoSE<T> cursor = primero;
+            NodoSE<Coordenada> cursor = primero;
             int pos_cursor = 0;
             while ((cursor.getSiguiente() != null) && (pos_cursor <= pos - 1)) {
                 pos_cursor++;
@@ -45,12 +46,12 @@ public class listaSE<T> implements ILista<T>{
         longitud++;
     }
 
-    public T Obtener(int pos) throws ExceptionPosFueraDeRango {
+    public Coordenada Obtener(int pos) throws ExceptionPosFueraDeRango {
         if ((pos < 0) || (pos >= longitud)) {
             throw new ExceptionPosFueraDeRango();
         }
 
-        NodoSE<T> cursor = primero;
+        NodoSE<Coordenada> cursor = primero;
         for (int i = 0; i < pos; i++) {
             cursor = cursor.getSiguiente();
         }
@@ -65,11 +66,11 @@ public class listaSE<T> implements ILista<T>{
             throw new ExceptionPosFueraDeRango();
         }
 
-        NodoSE<T> cursor = primero;
+        NodoSE<Coordenada> cursor = primero;
         if (pos == 0) {
             primero = cursor.getSiguiente();
         } else {
-            NodoSE<T> anterior = primero;
+            NodoSE<Coordenada> anterior = primero;
             int pos_cursor = 0;
             while ((cursor != null) && (pos_cursor != pos)) {
                 anterior = cursor;
@@ -93,13 +94,13 @@ public class listaSE<T> implements ILista<T>{
         return (longitud == 0);
     }
 
-    public int Buscar(T x) throws Exception {
+    public int Buscar(Coordenada x) throws Exception {
         if (Vacia()) {
             throw new ExceptionPosFueraDeRango();
         }
 
         int pos = 0;
-        NodoSE<T> cursor = primero;
+        NodoSE<Coordenada> cursor = primero;
         while ((cursor != null) && (!cursor.getInfo().equals(x))) {
             cursor = cursor.getSiguiente();
             pos++;
