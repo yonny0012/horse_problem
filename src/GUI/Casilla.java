@@ -134,8 +134,8 @@ public class Casilla extends JPanel implements ICasilla{
         public void mouseClicked(MouseEvent e) {
             System.out.print("esta cliqueando en "+getId()+" "+getLetterFila()+getColumna()+"\n");
             if(!hasCaballo)
-                //setCaballo(new caballoBlanco());
-                setCaballo(new caballoNegro());
+                //setCaballo(new caballoBlanco(id_cas));
+                setCaballo(new caballoNegro(id_cas));
             else
                 System.out.println("Ya hay un caballo aqui\n");     //para no poner caballos donde ya lo hay
         }

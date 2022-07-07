@@ -7,10 +7,12 @@ import GUI.Casilla;
 
 public class Tablero extends JPanel{
     private Casilla[][] casillas;
-    private boolean canSetHorse = false;
+    private boolean canSetHorse = false;    
+    private int con_Clicks = 0;
     
     public Tablero(){
         super();
+
         casillas = new Casilla[8][8];
     }
     
@@ -38,4 +40,5 @@ public class Tablero extends JPanel{
         }
     }
     */
+    
 }

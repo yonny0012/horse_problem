@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import GUI.Caballo;
 import GUI.Frame;
 //import GUI.Ventana;
+import GUI.caballoBlanco;
+import GUI.caballoNegro;
 
 public class Horse {
 
@@ -19,9 +21,9 @@ public class Horse {
         f1.setVisible(true);
         
 
-        /*(f1.getPan_Principal().getCasillas())[0][0].setCaballo(new Caballo());
-        (f1.getPan_Principal().getCasillas())[2-1][2-1].setCaballo(new Caballo());
-        (f1.getPan_Principal().getCasillas())[5][1].setCaballo(new Caballo());
+        (f1.getPan_Principal().getCasillas())[0][0].setCaballo(new caballoBlanco(11));
+        (f1.getPan_Principal().getCasillas())[2-1][2-1].setCaballo(new caballoNegro(22));
+        /*(f1.getPan_Principal().getCasillas())[5][1].setCaballo(new Caballo());
         (f1.getPan_Principal().getCasillas())[2][3].setCaballo(new Caballo());
         (f1.getPan_Principal().getCasillas())[1][4].setCaballo(new Caballo());*/
         //JLabel lb = new JLabel();
